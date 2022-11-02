@@ -1,0 +1,4 @@
+#Wed Nov 02 15:20:24 AST 2022
+base.0=/Users/miguelsantana/projects/ministerioapp/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

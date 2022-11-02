@@ -1,0 +1,150 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.sql_netcore"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:4:6-67
+11-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:4:23-65
+12
+13    <queries>
+13-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:36:6-57:15
+14
+15        <!-- If your app opens https URLs -->
+16        <intent>
+16-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:38:9-41:18
+17            <action android:name="android.intent.action.VIEW" />
+17-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:39:13-65
+17-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:39:21-62
+18
+19            <data android:scheme="https" />
+19-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:40:13-44
+19-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:40:19-41
+20        </intent>
+21        <!-- If your app makes calls -->
+22        <intent>
+22-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:43:9-46:18
+23            <action android:name="android.intent.action.DIAL" />
+23-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:44:13-65
+23-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:44:21-62
+24
+25            <data android:scheme="tel" />
+25-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:40:13-44
+25-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:40:19-41
+26        </intent>
+27        <!-- If your sends SMS messages -->
+28        <intent>
+28-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:48:9-51:18
+29            <action android:name="android.intent.action.SENDTO" />
+29-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:49:13-67
+29-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:49:21-64
+30
+31            <data android:scheme="smsto" />
+31-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:40:13-44
+31-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:40:19-41
+32        </intent>
+33        <!-- If your app sends emails -->
+34        <intent>
+34-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:53:9-56:18
+35            <action android:name="android.intent.action.SEND" />
+35-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:54:13-65
+35-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:54:21-62
+36
+37            <data android:mimeType="*/*" />
+37-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:40:13-44
+37-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:55:19-41
+38        </intent>
+39    </queries>
+40
+41    <application
+42        android:name="android.app.Application"
+42-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:7:9-42
+43        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+43-->[androidx.core:core:1.6.0] /Users/miguelsantana/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+44        android:icon="@mipmap/ic_launcher"
+44-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:8:9-43
+45        android:label="sql_netcore" >
+45-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:6:9-36
+46        <activity
+46-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:9:9-29:20
+47            android:name="com.example.sql_netcore.MainActivity"
+47-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:10:13-41
+48            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+48-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:14:13-163
+49            android:exported="true"
+49-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:11:13-36
+50            android:hardwareAccelerated="true"
+50-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:15:13-47
+51            android:launchMode="singleTop"
+51-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:12:13-43
+52            android:theme="@style/LaunchTheme"
+52-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:13:13-47
+53            android:windowSoftInputMode="adjustResize" >
+53-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:16:13-55
+54
+55            <!--
+56                 Specifies an Android theme to apply to this Activity as soon as
+57                 the Android process has started. This theme is visible to the user
+58                 while the Flutter UI initializes. After that, this theme continues
+59                 to determine the Window background behind the Flutter UI.
+60            -->
+61            <meta-data
+61-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:21:13-24:17
+62                android:name="io.flutter.embedding.android.NormalTheme"
+62-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:22:15-70
+63                android:resource="@style/NormalTheme" />
+63-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:23:15-52
+64
+65            <intent-filter>
+65-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:25:13-28:29
+66                <action android:name="android.intent.action.MAIN" />
+66-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:26:17-68
+66-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:26:25-66
+67
+68                <category android:name="android.intent.category.LAUNCHER" />
+68-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:27:17-76
+68-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:27:27-74
+69            </intent-filter>
+70        </activity>
+71        <!--
+72             Don't delete the meta-data below.
+73             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+74        -->
+75        <meta-data
+75-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:32:9-34:33
+76            android:name="flutterEmbedding"
+76-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:33:13-44
+77            android:value="2" />
+77-->/Users/miguelsantana/projects/ministerioapp/android/app/src/main/AndroidManifest.xml:34:13-30
+78
+79        <activity
+79-->[:url_launcher_android] /Users/miguelsantana/projects/ministerioapp/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-13:74
+80            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+80-->[:url_launcher_android] /Users/miguelsantana/projects/ministerioapp/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-74
+81            android:exported="false"
+81-->[:url_launcher_android] /Users/miguelsantana/projects/ministerioapp/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-37
+82            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+82-->[:url_launcher_android] /Users/miguelsantana/projects/ministerioapp/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-71
+83
+84        <uses-library
+84-->[androidx.window:window:1.0.0-beta04] /Users/miguelsantana/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+85            android:name="androidx.window.extensions"
+85-->[androidx.window:window:1.0.0-beta04] /Users/miguelsantana/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+86            android:required="false" />
+86-->[androidx.window:window:1.0.0-beta04] /Users/miguelsantana/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+87        <uses-library
+87-->[androidx.window:window:1.0.0-beta04] /Users/miguelsantana/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+88            android:name="androidx.window.sidecar"
+88-->[androidx.window:window:1.0.0-beta04] /Users/miguelsantana/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+89            android:required="false" />
+89-->[androidx.window:window:1.0.0-beta04] /Users/miguelsantana/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+90    </application>
+91
+92</manifest>

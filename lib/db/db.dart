@@ -43,4 +43,10 @@ class DB {
             correo: usuariosMap[i]['correo'],
             password: usuariosMap[i]['password']));
   }
+
+  static Future<void> insert2() async {
+    Database database = await _openDB();
+
+    var resultado = await database.rawInsert("INSERT INTO usuarios(id, identificacion, correo, password)" "VALUES(${Usuario.})");
+  }
 }
