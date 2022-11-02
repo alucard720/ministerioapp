@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
@@ -37,4 +38,15 @@ class DatabaseHelper {
   static Database? _database;
 
   Future<Database> get database async => _database ??= await _initDatabase();
+
+  Future<Database> _initDatabase() async {
+    Directory documentDirectory = await getApplicationDocumentsDirectory();
+
+    String path = join(documentDirectory.path, 'usuario.db');
+    return await openDatabase(
+      path,
+      version: 1,
+      onCreate: _onCreate,
+    );
+  }
 }
