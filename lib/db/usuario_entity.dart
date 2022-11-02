@@ -1,21 +1,18 @@
 class Usuario {
-  int id;
-  int identificacion;
-  String correo;
-  String password;
+  final int? id;
+  final int? indentificacion;
+  final String correo;
+  final String password;
 
   Usuario(
-      {required this.id,
-      required this.identificacion,
+      {this.id,
+      this.indentificacion,
       required this.correo,
       required this.password});
 
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'identificacion': identificacion,
-      'correo': correo,
-      'password': password
-    };
-  }
+  factory Usuario.fromMap(Map<String, dynamic> json) => new Usuario(
+      id: json['id'],
+      indentificacion: json['identifiacion'],
+      correo: json['correo'],
+      password: json['password']);
 }
