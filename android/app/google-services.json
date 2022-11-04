@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "349862733244",
+    "project_id": "ministerioapp-f7cd8",
+    "storage_bucket": "ministerioapp-f7cd8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349862733244:android:075896ae373110794d77b9",
+        "android_client_info": {
+          "package_name": "com.example.sql_netcore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349862733244-hqt601bijbdgc8o5mk8kkssafs31tlhv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyu3aAVdE3Zldvk6iudjG86JzB9zQhBVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349862733244-hqt601bijbdgc8o5mk8kkssafs31tlhv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:sql_netcore/screens/app_search.dart';
@@ -40,7 +39,7 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            AppSearch(),
+            const AppSearch(),
             Column(
               children: <Widget>[
                 const SizedBox(
@@ -62,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                     center: const Text('0%'),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 Row(

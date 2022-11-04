@@ -1,9 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import 'package:sql_netcore/screens/homescreen.dart';
-import 'package:sql_netcore/screens/loginscreen.dart';
-
-import '../widgets/input_decoration.dart';
+import 'package:sql_netcore/screens/signin_db.dart';
+import 'package:sql_netcore/widgets/textformfield.dart';
 
 class signup_db extends StatefulWidget {
   const signup_db({super.key});
@@ -39,7 +38,7 @@ class _signup_dbState extends State<signup_db> {
             height: 250,
           ),
           Container(
-            constraints: const BoxConstraints(maxHeight: 440, minHeight: 200),
+            constraints: const BoxConstraints(maxHeight: 420, minHeight: 200),
             padding: const EdgeInsets.all(20),
             margin: const EdgeInsets.symmetric(horizontal: 30),
             width: double.infinity,
@@ -63,83 +62,46 @@ class _signup_dbState extends State<signup_db> {
                   style: Theme.of(context).textTheme.headline4,
                 ),
                 const SizedBox(
-                  height: 30,
+                  height: 10,
                 ),
                 Form(
                   child: Form(
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     child: Column(
                       children: [
-                        TextFormField(
-                          controller: _FirstNamecontroller,
-                          keyboardType: TextInputType.name,
-                          autocorrect: false,
-                          decoration: Inputdecorations.inputDecoration(
-                              hintext: 'Ingresar Cedula o Pasaporte',
-                              labeltext: 'Cedula o Pasaporte',
-                              icon: const Icon(Icons.person_add)),
-                        ),
+                        reusableTextfield(
+                            "Cedula o Pasaporte",
+                            Icons.person_add_alt_outlined,
+                            false,
+                            _FirstNamecontroller),
                         const SizedBox(
-                          height: 30,
+                          height: 20,
                         ),
-                        TextFormField(
-                          controller: _Emailcontroller,
-                          autocorrect: false,
-                          decoration: Inputdecorations.inputDecoration(
-                            hintext: 'ejemplo@hotmail.com',
-                            labeltext: 'Correo Electronico',
-                            icon: const Icon(Icons.alternate_email_rounded),
-                          ),
-                          validator: (value) {
-                            String pattern =
-                                r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-                            RegExp regExp = RegExp(pattern);
-                            return regExp.hasMatch(value ?? '')
-                                ? null
-                                : 'No es un correo';
-                          },
-                        ),
+                        reusableTextfield("Correo Electronico",
+                            Icons.email_outlined, false, _Emailcontroller),
                         const SizedBox(
-                          height: 30,
+                          height: 20,
                         ),
-                        TextFormField(
-                          controller: _Passwordcontroller,
-                          keyboardType: TextInputType.emailAddress,
-                          autocorrect: false,
-                          decoration: Inputdecorations.inputDecoration(
-                              hintext: '*****',
-                              labeltext: 'contrasena',
-                              icon: const Icon(Icons.lock)),
-                          validator: (value) {
-                            return (value != null && value.length >= 6)
-                                ? null
-                                : 'la contrasena debe ser mayor o igual a 6 caracteres';
-                          },
-                        ),
+                        reusableTextfield("Contrasena", Icons.lock_outline,
+                            true, _Passwordcontroller),
                         const SizedBox(
-                          height: 30,
+                          height: 20,
                         ),
-                        MaterialButton(
-                          onPressed: () {
+                        signInUPButton(context, false, () {
+                          FirebaseAuth.instance
+                              .createUserWithEmailAndPassword(
+                                  email: _Emailcontroller.text,
+                                  password: _Passwordcontroller.text)
+                              .then((value) {
+                            print("Nueva Cuenta Creada");
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const HomeScreen()));
-                          },
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          disabledColor: Colors.grey,
-                          color: Colors.blueAccent,
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 80, vertical: 15),
-                            child: const Text(
-                              'Ingresar',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
-                        )
+                                    builder: ((context) => HomeScreen())));
+                          }).onError((error, stackTrace) {
+                            print("Error ${error.toString()}");
+                          });
+                        })
                       ],
                     ),
                   ),
@@ -148,20 +110,30 @@ class _signup_dbState extends State<signup_db> {
             ),
           ),
           const SizedBox(
-            height: 40,
+            height: 10,
           ),
-          TextButton(
-            style: TextButton.styleFrom(
-              textStyle: const TextStyle(fontSize: 14),
-            ),
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const LoginScreen()));
-            },
-            child: const Text('si ya tienes cuenta pulsa aqui'),
-          )
+          signInOption()
         ],
       ),
+    );
+  }
+
+  Row signInOption() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text("Si tienes Cuenta", style: TextStyle(color: Colors.black)),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => SignIn_DB()));
+          },
+          child: const Text(
+            " Accede",
+            style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+          ),
+        )
+      ],
     );
   }
 

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:sql_netcore/screens/loginscreen.dart';
+import 'package:sql_netcore/screens/homescreen.dart';
+import 'package:sql_netcore/screens/signin_db.dart';
 import 'package:sql_netcore/screens/signup_db.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => const LoginScreen());
+        return MaterialPageRoute(builder: (_) => HomeScreen());
       case '/signup':
-        return MaterialPageRoute(builder: (_) => const signup_db());
+        return MaterialPageRoute(builder: (_) => signup_db());
 
       default:
         return _errorRoute();

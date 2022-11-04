@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sql_netcore/screens/homescreen.dart';
-import 'package:sql_netcore/screens/signup.dart';
 import 'package:sql_netcore/widgets/input_decoration.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  LoginScreen({super.key});
 
   @override
+  final _correoController = TextEditingController();
+  final _passwordController = TextEditingController();
+
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
@@ -132,7 +134,7 @@ class LoginScreen extends StatelessWidget {
             ),
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const SignUP()));
+                  MaterialPageRoute(builder: (context) => const HomeScreen()));
             },
             child: const Text('Crear una Nueva Cuenta'),
           )

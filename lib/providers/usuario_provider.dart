@@ -3,7 +3,7 @@ import 'package:sql_netcore/constants.dart';
 import 'package:sql_netcore/models/usuarios.dart';
 import 'package:http/http.dart' as http;
 
-final urlapi = url;
+const urlapi = url;
 
 class Usuario_provider with ChangeNotifier {
   List<Usuario> usuarios = [];
