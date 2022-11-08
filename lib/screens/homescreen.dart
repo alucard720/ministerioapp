@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:sql_netcore/screens/app_search.dart';
+import 'package:sql_netcore/screens/signin_db.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 _launchURLMinerd() async {
@@ -174,28 +176,20 @@ class HomeScreen extends StatelessWidget {
             Icons.person_outlined,
             size: 50,
           )),
-          const ListTile(
-            leading: Icon(Icons.home),
-            title: Text(
-              'M E N U',
-              style: TextStyle(color: Colors.blue),
+          ListTile(
+            leading: Icon(Icons.logout_outlined),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => const SignIn_DB())));
+            },
+            title: const Text(
+              "LOGOUT",
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue),
             ),
-          ),
-          const ListTile(
-            leading: Icon(Icons.message),
-            title: Text(
-              'M E S S A G E',
-              style: TextStyle(color: Colors.blue),
-            ),
-          ),
-          const ListTile(
-            leading: Icon(Icons.history),
-            title: Text('H I S T O R Y', style: TextStyle(color: Colors.blue)),
-          ),
-          const ListTile(
-            leading: Icon(Icons.link),
-            title: Text('L O G O U T', style: TextStyle(color: Colors.blue)),
-          ),
+          )
         ]),
       ),
     );

@@ -183,4 +183,11 @@ class _signup_dbState extends State<signup_db> {
           color: const Color.fromRGBO(255, 255, 255, 0.05)),
     );
   }
+
+  @override
+  void dispose() {
+    _Emailcontroller.dispose();
+    _Passwordcontroller.dispose();
+    super.dispose();
+  }
 }
