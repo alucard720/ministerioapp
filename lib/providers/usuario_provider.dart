@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:sql_netcore/constants.dart';
+import 'package:sql_netcore/widgets/constants.dart';
 import 'package:sql_netcore/models/usuarios.dart';
 import 'package:http/http.dart' as http;
 
